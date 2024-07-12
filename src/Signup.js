@@ -11,7 +11,7 @@
 //     const handleSubmit = async (e) => {
 //         e.preventDefault();
 //         try {
-//             const res = await axios.post('http://localhost:5000/api/auth/signup', { fullName, username, email, password });
+//             const res = await axios.post('${process.env.REACT_APP_SERVER_URL}/api/auth/signup', { fullName, username, email, password });
 //             if (res.data.token) {
 //                 localStorage.setItem('token', res.data.token); // Store token in local storage
 //                 history.push('/'); // Redirect to home page or wherever after signup
@@ -78,8 +78,8 @@ const Signup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const res = await axios.post('http://localhost:5000/api/auth/signup', { fullName, username, email, password });
+            try { 
+            const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api/auth/signup`, { fullName, username, email, password });
             if (res.data.token) {
                 localStorage.setItem('token', res.data.token); // Store token in local storage
                 navigate('/'); // Redirect to home page or wherever after signup
@@ -124,7 +124,7 @@ const Signup = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-                <button type="submit">Signup</button>
+                <button type="submit" onClick={(e)=> handleSubmit(e)}>Signup</button>
             </form>
             {error && <p>{error}</p>}
         </div>

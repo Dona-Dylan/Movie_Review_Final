@@ -6,7 +6,7 @@
 // consumer / (useContext(you))
 import React, { useContext, useEffect, useState } from "react";
 
-export const API_URL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
+export const API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 
 const AppContext = React.createContext();
 

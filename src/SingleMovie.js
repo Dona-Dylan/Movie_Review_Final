@@ -28,7 +28,7 @@
 
 //     const getReviews = async (movieName) => {
 //         try {
-//             const res = await fetch(`http://localhost:5000/api/reviews/${movieName}`);
+//             const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/reviews/${movieName}`);
 //             const data = await res.json();
 //             if (Array.isArray(data)) {
 //                 setReviews(data);
@@ -46,7 +46,7 @@
 
 //         try {
 //             const token = localStorage.getItem('token');
-//             const res = await fetch('http://localhost:5000/api/reviews', {
+//             const res = await fetch('${process.env.REACT_APP_SERVER_URL}/api/reviews', {
 //                 method: 'POST',
 //                 headers: {
 //                     'Content-Type': 'application/json',
@@ -203,7 +203,7 @@
 
 //     const getReviews = async (movieName) => {
 //         try {
-//             const res = await fetch(`http://localhost:5000/api/reviews/${movieName}`);
+//             const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/reviews/${movieName}`);
 //             const data = await res.json();
 //             if (Array.isArray(data)) {
 //                 setReviews(data);
@@ -221,7 +221,7 @@
 
 //         try {
 //             const token = localStorage.getItem('token');
-//             const res = await fetch('http://localhost:5000/api/reviews', {
+//             const res = await fetch('${process.env.REACT_APP_SERVER_URL}/api/reviews', {
 //                 method: 'POST',
 //                 headers: {
 //                     'Content-Type': 'application/json',
@@ -328,6 +328,44 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { API_URL } from "./context";
@@ -358,7 +396,7 @@ const SingleMovie = () => {
 
     const getReviews = async (movieName) => {
         try {
-            const res = await fetch(`http://localhost:5000/api/reviews/${movieName}`);
+            const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/reviews/${movieName}`);
             const data = await res.json();
             if (Array.isArray(data)) {
                 setReviews(data);
@@ -376,7 +414,7 @@ const SingleMovie = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5000/api/reviews', {
+            const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/reviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -485,4 +523,3 @@ const SingleMovie = () => {
 };
 
 export default SingleMovie;
-
