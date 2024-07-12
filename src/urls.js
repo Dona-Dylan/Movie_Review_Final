@@ -1,0 +1,1 @@
+export const baseUrl= `https://movie-review-final.onrender.com`
