@@ -13,9 +13,10 @@
             "methods": [
                 "GET",
                 "POST",
+                "OPTIONS",
                 "PATCH",
                 "DELETE",
-                "OPTIONS"
+                "PUT"
             ]
         }
     ]
